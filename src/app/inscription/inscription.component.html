@@ -1,0 +1,180 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<div class="container">
+  <h2>
+    Veuillez insérer les informations vous concernant
+  </h2><hr>
+  
+  <!-- ca noon pas decommenter <form>
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Nom">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Prénom">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2"></label>
+      <input type="text" class="form-control" id="adresse" placeholder="Adresse">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1"></label>
+      <select class="form-control form-control-sm" id="statut" placeholder="statut">
+        <option selected>Votre situation :</option>
+        <option>En recherche d'emploi</option>
+        <option>Recruteur</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1"></label>
+      <select class="form-control form-control-sm" id="exampleFormControlSelect1" placeholder="Domaine de recherche" >
+        <option selected >Domaine de recherche</option>
+        <option>Numérique</option>
+        <option>Chimie</option>
+        <option>Travaux publics</option>
+        <option>Alimentaire</option>
+        <option>Banque</option>
+        <option>Hôtellerie-Restauration</option>
+        <option>Agriculture</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2"></label>
+      <input type="text" class="form-control" id="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2"></label>
+      <input type="text" class="form-control" id="posteavant" placeholder="Poste occupé avant">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2"></label>
+      <input type="text" class="form-control" id="telephone" placeholder="Numéro de téléphone">
+    </div>
+    <div class="form-group">
+      <label for="competences"></label>
+      <textarea class="form-control" id="competences" rows="3" placeholder="Compétences"></textarea>
+    </div>
+  </form> -->
+
+
+  
+  <!-- <form [formGroup]="profileForm" #gfg = "ngForm" (ngSubmit)="onSubmit()">
+      <label for="nom"></label>
+      <input type="text" id="nom" class="form-control " type="text" placeholder="Nom" formControlName="nom" [(ngModel)]="nom">
+    
+      <label for="prenom"></label>
+      <input id="prenom" type="text" class="form-control" placeholder="Prénom" formControlName="prenom" [(ngModel)]="prenom">
+    
+      <label for="addresse"></label>
+      <input id="addresse" type="text" class="form-control" placeholder="Adresse" formControlName="addresse" [(ngModel)]="addresse">
+
+      <label for="email"></label>
+      <input id="email" type="text" class="form-control" placeholder="Email" formControlName="email" [(ngModel)]="email">
+
+      <label for="posteAvant"></label>
+      <input id="posteAvant" type="text" class="form-control" placeholder="Poste occupé avant" formControlName="posteAvant" [(ngModel)]="posteAvant">
+
+      <label for="domaineRecherche"></label>
+      <select class="form-control" id="domaineRecherche" placeholder="Domaine de recherche" formControlName="domaineRecherche" [(ngModel)]="domaineRecherche">
+        <option selected >Domaine de recherche</option>
+        <option>Numérique</option>
+        <option>Chimie</option>
+        <option>Travaux publics</option>
+        <option>Alimentaire</option>
+        <option>Banque</option>
+        <option>Hôtellerie-Restauration</option>
+        <option>Agriculture</option>
+      </select>
+
+      <label for="statut"></label>
+      <select class="form-control " id="statut" placeholder="Vous êtes " formControlName="statut" [(ngModel)]="statut"> 
+        <option selected ="selected">Vous êtes </option>
+        <option>Recruteur</option>
+        <option>En recherche de travail</option>
+      </select>
+
+      <label for="numtelephone"></label>
+      <input id="numtelephone" type="text" class="form-control" placeholder="Numéro de téléphone" formControlName="numtelephone" [(ngModel)]="numTelephone">
+
+      <label for="competences"></label>
+      <textarea id="competences" class="col-sm-9" rows="3" type="text" class="form-control" placeholder="Compétences" formControlName="competences" [(ngModel)]="competences"></textarea><br>
+    
+    <p>Completer le formulaire sds pour envoyer les données.</p>
+    <button (click)="postData()" type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!profileForm.valid" >Envoyer</button>
+    Vous avez bien envoyé le nom {{resultNom}}<br>
+    Vous avez bien envoyé le prenom {{resultPrenom}}<br>
+    Vous avez bien envoyé l'adresse {{addresse}}<br>
+    Vous avez bien envoyé l'email {{email}}<br>
+    Vous avez bien envoyé le poste avant {{posteAvant}}<br>
+    Vous avez bien envoyé l'adresse {{addresse}}<br>
+    Vous avez bien envoyé les competences {{competences}}<br>
+    Vous avez bien envoyé le domaine de recherche {{domaineRecherche}}<br>
+    Vous avez bien envoyé le statut :  {{statut}}<br>
+  </form>
+  <br>
+  <div>
+    
+  </div>
+  <br>
+</div>
+{{ gfg.value.nom | json }} -->
+
+<form #addForm="ngForm" (ngSubmit)="onAddUtilisateur(addForm)">
+  <div class="row">
+    <div class="col">
+      <label for="nom"></label>
+      <input type="text" ngModel name ="nom" id="nom" class="form-control " type="text" placeholder="Nom" required>
+    </div>
+    <div class="col">
+      <label for="prenom"></label>
+      <input id="prenom" ngModel name="prenom" type="text" class="form-control" placeholder="Prénom" required>
+    </div>
+    </div>
+  <label for="adresse"></label>
+  <input id="adresse" ngModel name ="adresse" type="text" class="form-control" placeholder="Adresse">
+
+  <label for="email"></label>
+  <input id="email" ngModel name="email"  type="text" class="form-control" placeholder="Email" required>
+
+  <label for="posteAvant"></label>
+  <input id="posteAvant" ngModel name="posteAvant" type="text" class="form-control" placeholder="Poste occupé avant" required>
+
+  <label for="domaineRecherche"></label>
+  <select class="form-control" ngModel name="domaineRecherche" id="domaineRecherche" placeholder="Domaine de recherche" required>
+    <option value="" selected disabled>Choisissez votre domaine de recherche : </option>
+    <option>Numérique</option>
+    <option>Chimie</option>
+    <option>Travaux publics</option>
+    <option>Alimentaire</option>
+    <option>Banque</option>
+    <option>Hôtellerie-Restauration</option>
+    <option>Agriculture</option>
+  </select>
+
+  <label for="statut"></label>
+  <select class="form-control " ngModel name="statut"  placeholder="Vous êtes " required> 
+    <option value="" selected disabled>Vous êtes : </option>
+    <option>Recruteur</option>
+    <option>En recherche de travail</option>
+  </select>
+
+  <!-- <label for="statutnumber"></label>
+  <input id="statutnumber" ngModel name="statutnumber" type="text" class="form-control" placeholder="Numéro de statut" required> -->
+
+  <label for="numTelephone"></label>
+  <input id="numTelephone" ngModel name="numTelephone" type="text"  class="form-control" placeholder="Numéro de téléphone">
+
+  <label for="competences"></label>
+  <textarea id="competences" ngModel name="competences" class="col-sm-9"  rows="3" type="text" class="form-control" placeholder="Compétences" required></textarea><br>
+
+
+  <div class="alert alert-warning" role="alert">
+    Afin de finir la procédure, il vous faut insérer <a href="#" class="alert-link">TOUTES</a> les informations demandées.
+  </div>
+  <div class="alert alert-warning" role="alert">
+    En appuyant sur Envoyer vous <a href="#" class="alert-link">acceptez</a> que vos données soient enregistrées dans nos bases de données afin de suivre le processus.
+  </div>
+<button [disabled]="addForm.invalid" type="submit" class="btn btn-primary btn-lg btn-block" onclick="location.href = 'http://localhost:4200/inscription';">Envoyer</button>
+</form>
+<br><br>
+</div>
